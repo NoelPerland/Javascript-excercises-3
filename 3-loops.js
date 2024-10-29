@@ -12,12 +12,26 @@ while (i <= 15) {
   i++;
 }
 
-// Task 3. Write for-loop that loops through the array `numbers`
-// compare every number with the variable `lowest`.
+// Task 3. Write for-loop that loops through the array `numbers` compare every number with the variable `lowest`.
 // If the number is lower than `lowest` update `lowest` to the current number
 // Use console.log to print `lowest`.
 const numbers = [9, 10, 17, 34, 2, 4, 100];
 let lowest = numbers[0];
 
+for (let i = 1; i < numbers.length; i++) {
+  if (numbers[i] < lowest) {
+    lowest = numbers[i];
+  }
+}
+console.log(lowest);
+
 // Task 4, Write a function `getLowest` that takes an array of numbers as
 // input and returns the lowest number.
+
+function getLowest(numbers) {
+  return Math.min(...numbers);
+}
+
+const numbersArray = [5, 8, 2, 9, 3];
+const lowestNumber = getLowest(numbersArray);
+console.log(lowestNumber);
