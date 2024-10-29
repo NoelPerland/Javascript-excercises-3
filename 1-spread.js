@@ -15,12 +15,10 @@ const totalFruits = [...startingFruits, ...moreFruits];
 console.log(totalFruits);
 // Task 3: Use the spread operator to create a new object called `updatedCar` and change the year to 2022.
 // Use console.log to print `updatedCar`.
-const car = {
-  make: "Toyota",
-  model: "Corolla",
-  year: 2020,
-};
+const car = { make: "Toyota", model: "Corolla", year: 2020 };
+
 const updatedCar = { ...car, year: 2022 };
+
 console.log(updatedCar);
 
 // Task 4: Use the spread operator to create a new object called `coloredCar`
@@ -32,5 +30,17 @@ console.log(coloredCar);
 // Task 5: Create a function called `updateCarModel` that takes an object and a new model as arguments
 // and returns a new object with the updated model using the spread operator.
 
+function updateCarModel(car, newModel) {
+  return { ...car, model: newModel };
+}
+
+const updatedCarModel = updateCarModel(car, "Camry");
+console.log(updatedCarModel);
+
 // Task 6: Use the `updateCarModel` function to update the model of `coloredCar` to "Camry" and store
 // it in a variable called `newModelCar`. Use console.log to print `newModelCar`.
+function updateCarModel(car, newModel) {
+  return { ...car, model: newModel };
+}
+const newModelCar = { ...updateCarModel(coloredCar, "Camry") };
+console.log(newModelCar);
